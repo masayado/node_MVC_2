@@ -17,11 +17,11 @@
     <input name="password" type="password">
     <input type="submit" value="Enviar" id="button">
   </form>
-  <h1>Lista de usuarios</h1>
+  <h3>Lista de usuarios</h3>
   <div>
     <ul>
       <% result.forEach(function(user){ %>
-        <li><%= user.name %></li>
+        <li><%= user.name %> <%= user.lastname %></li>
       <% }); %>
     </ul>
   </div>
