@@ -7,7 +7,7 @@ exports.user_create = function(req, res, next) {
     User.create(items, function(err, newUsers){
       if(err) return res.json({ error: err });
         //res.json(newUsers) 
-        res.redirect("/users");
+        res.redirect("/");
     });
   } 
   else {
@@ -18,5 +18,6 @@ exports.user_create = function(req, res, next) {
 exports.user_get = async function(req, res, next) {
     var users = await User.find({});
     //otra lógica
+    
     return users;
   }

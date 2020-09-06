@@ -3,9 +3,9 @@ var userController = require('../controllers/users');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+//router.get('/', function(req, res, next) {
+//  res.render('index', { title: 'Express' });
+//});
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
@@ -17,5 +17,4 @@ router.get('/', async function(req, res, next) {
 router.post('/', function(req, res, next) { 
   userController.user_create(req, res, next);
 });
-
 module.exports = router;

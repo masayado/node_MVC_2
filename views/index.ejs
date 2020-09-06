@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario y Usuarios registrados</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
   <body>
-    <h1>Mi Formulario en <%= title %></h1>
+    <h1>Mi Formulario en Express</h1>
     <form action="/users" method="POST">
       <label for="">Nombre</label>
       <input name="name" type="text">
@@ -13,7 +15,14 @@
       <input name="lastname" type="text">
       <label for="">Contraseña</label>
       <input name="password" type="password">
-      <input type="submit">
+      <input type="submit" value="Enviar" id="button">
     </form>
-  </body>
+ <div>
+     <ul>
+      <% result.forEach(function(user){ %>
+        <li><%= user.name %></li>
+      <% }); %>
+    </ul>
+  </div> 
+</body>
 </html>
