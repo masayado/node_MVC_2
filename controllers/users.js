@@ -16,7 +16,7 @@ exports.user_create = function(req, res, next) {
 }
 
 exports.user_get = async function(req, res, next) {
-    var users = await User.find({});
+    var users = await User.find({}).sort({name:1});
     //otra lógica
     
     return users;
