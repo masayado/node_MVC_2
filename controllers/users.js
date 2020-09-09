@@ -16,8 +16,10 @@ exports.user_create = function(req, res, next) {
 }
 
 exports.user_get = async function(req, res, next) {
-    var users = await User.find({}).sort({name:1});
-    //otra lógica
-    
-    return users;
-  }
+    var users = await User.find({}).sort({name:1}); //nombres en orden alfabetico
+    var usersName = users.map((user)=> {
+      user.lastname = user.lastname.replace('ñ', 'nn');
+      return user;
+    });
+    return usersName.sort();
+    };
